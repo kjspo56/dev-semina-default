@@ -27,4 +27,11 @@ class DemoApplicationTests {
         owner.animalCry();
     }
 
+    @Test
+    public void testPay(){
+        Payment cashPerf = new CashPerf();
+        Store store = new Store(cashPerf);
+        store.buySomething(100);
+    }
+
 }

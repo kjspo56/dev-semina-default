@@ -12,7 +12,7 @@ interface Animal {
     String cry();
 }
 
-@Component("dog")
+@Component
 @Primary
 class Dog implements Animal {
     @Override
@@ -21,7 +21,7 @@ class Dog implements Animal {
     }
 }
 
-@Component("cat")
+@Component
 class Cat implements Animal {
     @Override
     public String cry() {
@@ -33,7 +33,7 @@ class Cat implements Animal {
 class Owner {
     private Animal animal;
 
-    public Owner(@Qualifier("cat") Animal animal) {
+    public Owner(Animal animal) {
         this.animal = animal;
     }
 

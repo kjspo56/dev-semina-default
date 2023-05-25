@@ -10,20 +10,20 @@ import java.util.List;
 class DemoApplicationTests {
 
     private final Owner owner;
-    private final List<Animal> animalList;
+    private final Animal animal;
 
     @Autowired
-    public DemoApplicationTests(Owner owner, List<Animal> animalList){
+    public DemoApplicationTests(Owner owner, Animal animal){
         this.owner = owner;
-        this.animalList = animalList;
+        this.animal = animal;
     }
 
     @Test
     public void beanTest(){
         System.out.println("Bean으로 등록된 동물들의 소리를 들어보겠습니다.");
-        for (Animal animal : animalList) {
-            System.out.println("Crying => " + animal.cry());
-        }
+        //for (Animal animal : animalList) {
+        //    System.out.println("Crying => " + animal.cry());
+        //}
         owner.animalCry();
     }
 

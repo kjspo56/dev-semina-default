@@ -29,7 +29,7 @@ class CashPerf implements Payment{
     //100원보다 많으면 카드로 결제하고 이하면 현금으로 결제
     @Override
     public void pay(int amount){
-        StopWatch stopWatch = new StopWatch();
+        StopWatch stopWatch = new StopWatch();  //시간 측정
         stopWatch.start();
         if(amount > 100) {
             System.out.println(amount + " 신용 카드");

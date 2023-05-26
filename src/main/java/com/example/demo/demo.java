@@ -1,19 +1,12 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 interface Animal {
     String cry();
 }
 
 @Component
-@Primary
 class Dog implements Animal {
     @Override
     public String cry() {
@@ -29,7 +22,7 @@ class Cat implements Animal {
     }
 }
 
-@Component
+
 class Owner {
     private Animal animal;
 
@@ -37,8 +30,9 @@ class Owner {
         this.animal = animal;
     }
 
-    public void animalCry() {
+    public boolean animalCry() {
         System.out.println(animal.cry());
+        return false;
     }
 }
 
